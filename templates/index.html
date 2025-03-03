@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🏡 House Price Prediction</h1>
+        <form method="post">
+            <label for="CRIM">Crime Rate (CRIM):</label>
+            <input type="number" step="any" name="CRIM" required>
+
+            <label for="ZN">Residential Land (ZN):</label>
+            <input type="number" step="any" name="ZN" required>
+
+            <label for="INDUS">Non-Retail Business Area (INDUS):</label>
+            <input type="number" step="any" name="INDUS" required>
+
+            <label for="CHAS">Charles River (CHAS) [0 = No, 1 = Yes]:</label>
+            <input type="number" step="any" name="CHAS" min="0" max="1" required>
+
+            <label for="NOX">Nitric Oxide Concentration (NOX):</label>
+            <input type="number" step="any" name="NOX" required>
+
+            <label for="RM">Average Number of Rooms (RM):</label>
+            <input type="number" step="any" name="RM" required>
+
+            <label for="AGE">Age of Property (AGE) %:</label>
+            <input type="number" step="any" name="AGE" required>
+
+            <label for="DIS">Distance to Employment Centers (DIS):</label>
+            <input type="number" step="any" name="DIS" required>
+
+            <label for="RAD">Accessibility to Highways (RAD):</label>
+            <input type="number" step="any" name="RAD" required>
+
+            <label for="TAX">Property Tax Rate (TAX):</label>
+            <input type="number" step="any" name="TAX" required>
+
+            <label for="PTRATIO">Pupil-Teacher Ratio (PTRATIO):</label>
+            <input type="number" step="any" name="PTRATIO" required>
+
+            <label for="B">Proportion of Black Population (B):</label>
+            <input type="number" step="any" name="B" required>
+
+            <label for="LSTAT">Lower Status Population (LSTAT):</label>
+            <input type="number" step="any" name="LSTAT" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if price is not none %}
+            <div class="result">
+                <h2>🏠 Predicted Price: ${{ price }}</h2>
+            </div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

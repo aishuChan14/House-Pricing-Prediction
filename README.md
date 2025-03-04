@@ -56,7 +56,6 @@ Open your browser and go to:
 ```
 http://127.0.0.1:5000/
 ```
-
 ## 🚀 Usage
 
 - **Step 1**: Enter values for features such as crime rate, number of rooms, tax rate, etc.
